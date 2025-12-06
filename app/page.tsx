@@ -1,65 +1,67 @@
 import Image from "next/image";
+import Hero from "../components/Hero";
+import IndustriesWeServe from "@/components/IndustriesWeServe";
+import BestSellingProducts from "@/components/BestSellingProducts";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <>
+    <Hero/>
+    <section
+  className="w-full bg-white py-16 md:py-24"
+  aria-labelledby="srjcraft-hospitality-heading"
+>
+  <div className="max-w-5xl mx-auto px-6 text-center">
+    {/* Decorative lines + eyebrow */}
+    <div className="flex items-center justify-center gap-6 mb-4">
+      <span className="hidden md:block w-24 h-px bg-gray-300" />
+      <p className="font-[font-1] text-sm tracking-widest text-blue-600">
+        DESIGNING HOSPITALITY ELEGANCE
+      </p>
+      <span className="hidden md:block w-24 h-px bg-gray-300" />
     </div>
+
+    {/* H2 — Primary section heading */}
+    <h2
+      id="srjcraft-hospitality-heading"
+      className="font-[font-2] text-xl md:text-2xl text-blue-800 mb-8"
+    >
+      Premium Furniture for Grand Establishments
+    </h2>
+
+    {/* Paragraph block — SEO heavy but readable */}
+    <div className="space-y-6 text-gray-700">
+      <p className="font-[font-1] text-sm md:text-base leading-relaxed">
+        Discover the essence of style and comfort in every seat with
+        <strong className="font-[font-1] font-medium"> SRJCraft</strong>, a
+        forward-driven furniture manufacturing company specializing in
+        premium restaurant, café, bar, and hotel furniture. We believe that
+        commercial furniture should not only be functional but also elevate
+        the visual identity of hospitality spaces through thoughtful design
+        and superior craftsmanship.
+      </p>
+
+      <p className="font-[font-1] text-sm md:text-base leading-relaxed">
+        At SRJCraft, we are committed to excellence at every stage of the
+        manufacturing process from responsibly sourced materials to precision
+        engineering and final inspection. Our collections are crafted using
+        high-quality materials and modern production techniques to ensure
+        durability, comfort, and timeless appeal for high-traffic environments.
+      </p>
+
+      <p className="font-[font-1] text-sm md:text-base leading-relaxed">
+        With a deep understanding of how furniture defines atmosphere, we
+        partner with restaurateurs, café owners, architects, and hoteliers to
+        create furnishings that enhance guest experience and brand presence.
+        Every srjCraft product reflects our passion for design, attention to
+        detail, and dedication to long-lasting quality.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <IndustriesWeServe/>
+    <BestSellingProducts/>
+    </>
   );
 }
