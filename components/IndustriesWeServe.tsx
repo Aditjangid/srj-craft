@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import IndustryCard from './industry-card';
@@ -68,13 +70,13 @@ const IndustriesWeServe = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-[font-2] text-blue-800 tracking-wide">
+          <h2 className="text-lg font-[font-2] text-blue-900 tracking-wide">
             INDUSTRIES WE SERVE
           </h2>
 
           <Link
             href="/industries"
-            className="flex items-center text-sm font-[font-1] text-blue-600 hover:text-blue-700"
+            className="flex items-center text-sm font-[font-1] text-blue-600 hover:text-blue-800"
           >
             View all
             <ChevronRight className="ml-1 h-4 w-4" />

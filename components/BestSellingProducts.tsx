@@ -43,7 +43,7 @@ const BestSellingProducts = () => {
         <div className="mb-10 text-center">
           <h2
             id="best-selling-products-heading"
-            className="font-[font-2] text-2xl md:text-3xl text-blue-800 mb-3"
+            className="font-[font-2] text-2xl md:text-3xl text-blue-900 mb-3"
           >
             Best Selling Hospitality Furniture
           </h2>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
+import ContactFormModal from "./ContactFormModal";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -57,61 +58,59 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <nav className="hidden lg:block w-full bg-white shadow-md">
         {/* Top Bar */}
-<div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex items-center justify-between h-20 gap-6">
+        <div className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-20 gap-6">
 
-      {/* Logo */}
-      <Link href="/" className=" flex-shrink-0">
-        <Image
-          src="/logo1.png"
-          alt="SRFCraft – Premium Hospitality Furniture Manufacturer"
-          width={200}
-          height={60}
-          className="h-28 w-auto"
-          priority
-        />
-      </Link>
+              {/* Logo */}
+              <Link href="/" className=" flex-shrink-0">
+                <Image
+                  src="/logo1.png"
+                  alt="SRFCraft – Premium Hospitality Furniture Manufacturer"
+                  width={200}
+                  height={60}
+                  className="h-28 w-auto"
+                  priority
+                />
+              </Link>
 
-            {/* Utility Links */}
-      <div className="flex items-center gap-6">
-        <Link href="/" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
-          HOME
-        </Link>
-        <Link href="/about-us" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
-          ABOUT US
-        </Link>
-        <Link href="/blogs" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
-          BLOGS
-        </Link>
-        <Link href="/contact" className="text-sm font-[font-2] text-blue-500 hover:bg-blue-400 hover:text-white px-4 py-2 border-blue-400 border rounded-4xl ">
-          CONTACT US
-        </Link>
-      </div>
+              {/* Utility Links */}
+              <div className="flex items-center gap-6">
+                <Link href="/" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
+                  HOME
+                </Link>
+                <Link href="/about-us" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
+                  ABOUT US
+                </Link>
+                <Link href="/blogs" className="text-sm font-[font-2] text-gray-900 hover:bg-gray-200 p-2 rounded-4xl px-4">
+                  BLOGS
+                </Link>
+                <ContactFormModal />
+              </div>
 
-      {/* Search Bar */}
-      <div className="flex items-center flex-1 max-w-md shadow-sm rounded-lg overflow-hidden">
-        <input
-          type="text"
-          placeholder="Search furniture..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-3 text-sm font-[font-1] text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
-        <button
-          onClick={handleSearch}
-          className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-3"
-          aria-label="Search products"
-        >
-          <Search className="w-5 h-5" />
-        </button>
-      </div>
+              {/* Search Bar */}
+              <div className="flex items-center flex-1 max-w-md shadow-sm rounded-lg overflow-hidden">
+                <input
+                  type="text"
+                  placeholder="Search furniture..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 text-sm font-[font-1] text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                />
+                <button
+                  onClick={handleSearch}
+                  className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-3"
+                  aria-label="Search products"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              </div>
 
 
 
-    </div>
-  </div>
-</div>
+            </div>
+          </div>
+        </div>
 
 
         {/* Menu Bar */}
@@ -129,7 +128,7 @@ const Navbar = () => {
                       <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-200" />
                     )}
                   </Link>
-                  
+
                   {/* Dropdown Menu */}
                   {item.hasDropdown && item.submenu.length > 0 && (
                     <div className="absolute left-0 top-full hidden group-hover:block w-56 bg-white shadow-xl border border-gray-200 z-50 rounded-b-lg overflow-hidden">
@@ -164,7 +163,7 @@ const Navbar = () => {
               >
                 <Menu className="w-6 h-6" />
               </button>
-              
+
               <Link href="/" className="flex-shrink-0">
                 <Image
                   src="/logo1.png"
@@ -175,7 +174,7 @@ const Navbar = () => {
                   priority
                 />
               </Link>
-              
+
               <div className="w-10"></div>
             </div>
           </div>
@@ -183,17 +182,16 @@ const Navbar = () => {
 
         {/* Overlay */}
         {mobileMenuOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity"
+          <div
+            className="fixed inset-0 bg-black/20 z-40 transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
         )}
 
         {/* Mobile Slide-out Menu */}
         <div
-          className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
         >
           {/* Menu Header */}
           <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-5 flex items-center justify-between">
@@ -209,6 +207,35 @@ const Navbar = () => {
 
           {/* Menu Items */}
           <div className="overflow-y-auto h-[calc(100%-80px)]">
+            <div className="px-4 py-4 space-y-2">
+              <Link
+                href="/"
+                className="block px-3 py-3 text-sm text-gray-900 rounded-md hover:bg-gray-100"
+              >
+                HOME
+              </Link>
+
+              <Link
+                href="/about-us"
+                className="block px-3 py-3 text-sm text-gray-900 rounded-md hover:bg-gray-100"
+              >
+                ABOUT US
+              </Link>
+
+              <Link
+                href="/blogs"
+                className="block px-3 py-3 text-sm text-gray-900 rounded-md hover:bg-gray-100"
+              >
+                BLOGS
+              </Link>
+
+              <div className="px-3 py-3">
+                <ContactFormModal />
+              </div>
+            </div>
+
+
+
             {/* Mobile Search Bar inside menu */}
             <div className="px-4 py-4 border-b border-gray-200">
               <div className="flex items-center shadow-sm rounded-lg overflow-hidden border border-gray-300">
@@ -241,17 +268,15 @@ const Navbar = () => {
                       >
                         <span>{item.title}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform duration-200 ${
-                            openDropdown === item.title ? "rotate-180" : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform duration-200 ${openDropdown === item.title ? "rotate-180" : ""
+                            }`}
                         />
                       </button>
-                      
+
                       {/* Mobile Submenu with smooth transition */}
                       <div
-                        className={`overflow-hidden transition-all duration-300 ${
-                          openDropdown === item.title ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                        }`}
+                        className={`overflow-hidden transition-all duration-300 ${openDropdown === item.title ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                          }`}
                       >
                         <div className="pl-4 pt-1 pb-2 space-y-1">
                           {item.submenu.map((subitem, subindex) => (
@@ -278,15 +303,8 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              
-              {/* Mobile Login/Register */}
-              <Link
-                href="/login"
-                className="block mt-6 py-3 px-4 text-center text-sm font-[font-1] text-white bg-gray-700 hover:bg-gray-800 rounded-lg transition-colors shadow-sm"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                LOGIN / REGISTER
-              </Link>
+
+
             </div>
           </div>
         </div>

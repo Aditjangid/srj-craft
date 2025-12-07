@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import Hero from "../components/Hero";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
@@ -24,7 +25,7 @@ export default function Home() {
           {/* H2 — Primary section heading */}
           <h2
             id="srjcraft-hospitality-heading"
-            className="font-[font-2] text-xl md:text-2xl text-blue-800 mb-8"
+            className="font-[font-2] text-xl md:text-2xl text-blue-900 mb-8"
           >
             Premium Furniture for Grand Establishments
           </h2>
@@ -62,6 +63,7 @@ export default function Home() {
 
       <IndustriesWeServe />
       <BestSellingProducts />
+      
     </>
   );
 }
